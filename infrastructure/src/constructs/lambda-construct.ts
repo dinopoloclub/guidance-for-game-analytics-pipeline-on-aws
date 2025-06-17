@@ -65,7 +65,7 @@ function. This function creates a new date-based partition in Glue Database base
           __dirname,
           `${codePath}/data-lake/glue-partition-creator/package-lock.json`
         ),
-        runtime: lambda.Runtime.NODEJS_18_X,
+        runtime: lambda.Runtime.NODEJS_22_X,
         memorySize: 128,
         timeout: cdk.Duration.minutes(5),
         environment: {
@@ -102,7 +102,7 @@ function. This function to process and transform raw events before they get writ
         ),
         memorySize: 256,
         timeout: cdk.Duration.minutes(5),
-        runtime: lambda.Runtime.NODEJS_18_X,
+        runtime: lambda.Runtime.NODEJS_22_X,
         environment: {
           APPLICATIONS_TABLE: props.applicationsTable.tableName,
           CACHE_TIMEOUT_SECONDS: "60",
@@ -122,7 +122,7 @@ required to initialize solution defaults. */
 
       memorySize: 128,
       timeout: cdk.Duration.minutes(5),
-      runtime: lambda.Runtime.NODEJS_18_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       environment: {
         VERSION: "2",
       },
@@ -138,7 +138,7 @@ required to initialize solution defaults. */
       ),
       memorySize: 128,
       timeout: cdk.Duration.seconds(60),
-      runtime: lambda.Runtime.NODEJS_18_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       environment: {
         AUTHORIZATIONS_TABLE: props.authorizationsTable.tableName,
         APPLICATION_AUTHORIZATIONS_INDEX: "ApplicationAuthorizations",
@@ -162,7 +162,7 @@ This function provides the application admin microservice. */
 
         memorySize: 128,
         timeout: cdk.Duration.seconds(60),
-        runtime: lambda.Runtime.NODEJS_18_X,
+        runtime: lambda.Runtime.NODEJS_22_X,
         environment: {
           AUTHORIZATIONS_TABLE: props.authorizationsTable.tableName,
           APPLICATION_AUTHORIZATIONS_INDEX: "ApplicationAuthorizations",
